@@ -1,0 +1,87 @@
+## c.nanorc, modified for quakec.
+
+##Brightred for constants
+##Brightblue for comments
+##Green for types and flags
+##Brightyellow for special types and typing information
+##Cyan for operators & vector definitions
+##Brightgreen for flow control
+##Yellow for built in variables
+##Magenta for built in functions
+##Brightcyan for quotes
+
+syntax "qc" "\.(qc)$"
+magic "^(C|C\+\+) (source|program)"
+comment "//"
+
+##Base C & Chapter 2
+#color brightblue "//.*"
+#color brightblue start="/\*" end="\*/"
+color brightred "\<[A-Z_][0-9A-Z_]+\>"
+color brightmagenta "^[[:space:]]*[A-Z_a-z]+:[[:space:]]*$"
+color ,green "[[:space:]]+$"
+color green "\<(\$flags|\$base|\$cd|\$frame|\$modelname|\$origin|\$scale|\$skin)\>"
+color green "\$[0-9a-zA-Z]+"
+
+##Chapter 3
+color green "\<(float|string|entity|vector|void)\>"
+color brightyellow "\<(\.float|\.string|\.entity|\.vector|\.void)\>"
+color brightyellow "\<(local)\>"
+
+##Chapter 4
+color cyan "[\&\+\-\*\/\|\~\!\^\<\>\=]"
+#color cyan "'([^']|\\')*'"
+#color brightcyan ""([^"]|\\")*""
+
+##Chapter 5
+color brightgreen "\<(if|else|while|do|return)\>"
+
+##Chapter 8
+color yellow "\<(coop|deathmatch|force_retouch|found_secrets|frametime|killed_monsters|mapname|msg_entity|other|self|serverflags|teamplay|time|total_monsters|total_secrets|world|parm1|parm2|parm3|parm4|parm5|parm6|parm7|parm8|parm9|parm10|parm11|parm12|parm13|parm14|parm15|parm16)\>"
+
+##Chapter 9
+color magenta "\<(makestatic|spawn|setmodel|setsize|setorigin|remove)\>"
+color magenta "\<(think|touch|use|blocked)\>"
+color yellow "\<(chain|ltime|teleport_time|spawnflags|modelindex|classname|model|frame|skin|effects)\>"
+color yellow "\<(origin|mins|maxs|size|absmin|absmax|oldorigin|angles)\>"
+color yellow "\<(waterlevel|watertype|groundentity)\>"
+color yellow "\<(velocity|avelocity|punchangle|movetype|yaw_speed|solid)\>"
+color yellow "\<(goalentity|ideal_yaw|yaw_speed|target|targetname)\>"
+color yellow "\<(nextthink|movedir|message|sounds|noise|noise1|noise2|noise3)\>"
+color yellow "\<(deadflag|health|max_health|takedamage|dmg_take|dmg_save|dmg_inflictor)\>"
+color yellow "\<(items|armortype|armorvalue|weapon|weaponmodel|weaponframe|currentammo|ammo_shells|ammo_nails|ammo_rockets|ammo_cells|impulse)\>"
+color yellow "\<(owner|enemy|button0|button1|button2|view_ofs|fixangle|v_angle|idealpitch|aiment)\>"
+color yellow "\<(frags|netname|colormap|team|flags)\>"
+color yellow "\<(v_forward|v_up|v_right)\>"
+##notably, things only defined in the quakec are not included here. This is because this should be applicable
+##for any quakec projects, even those that don't use any of the original qc.
+
+##Chapter 10
+color magenta "\<(anglemod|ceil|fabs|floor|ftos|random|rint)\>"
+color magenta "\<(makevectors|normalize|vlen|vectoangles|vectoyaw|vtos)\>"
+color magenta "\<(checkbottom|checkpos|pointcontents|traceline)\>"
+color magenta "\<(aim|checkclient|particle)\>"
+color magenta "\<(cvar|cvar_set|dprint|localcmd)\>"
+color magenta "\<(break|coredump|eprint|error|objerror|traceoff|traceon)\>"
+color magenta "\<(find|findradius|lightstyle|nextent)\>"
+color magenta "\<(ChangeYaw|droptofloor|movetogoal|walkmove)\>"
+color magenta "\<(bprint|centerprint|sprint)\>"
+color magenta "\<(WriteAngle|WriteByte|WriteChar|WriteCoord|WriteEntity|WriteLong|WriteShort|WriteString)\>"
+color magenta "\<(precache_file|precache_model|precache_sound)\>"
+color magenta "\<(changelevel|setspawnparms|stuffcmd)\>"
+color magenta "\<(ambientsound|sound)\>"
+color yellow "\<(trace_allsolid|trace_startsolid|trace_fraction|trace_endpos|trace_plane_normal|trace_plane_dist|trace_ent|trace_inopen|trace_inwater)\>"
+
+##Chapter 11
+color magenta "\<(PlayerPostThink|PlayerPreThink)\>"
+color magenta "\<(ClientConnect|ClientDisconnect|ClientKill|PutClientInServer|SetChangeParms|SetNewParms)\>"
+color magenta "\<(main|StartFrame)\>"
+
+##Chapter 13
+color yellow "\<(entityworld|entityself|entityother)\>"
+
+color cyan "'([^']|\\')*'"
+color brightcyan ""([^"]|\\")*""
+
+color brightblue "//.*"
+color brightblue start="/\*" end="\*/"
