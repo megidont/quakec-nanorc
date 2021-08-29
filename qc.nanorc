@@ -10,7 +10,7 @@
 ##Magenta for built in functions
 ##Brightcyan for quotes
 
-syntax "qc" "\.(qc)$"
+syntax "qc" "\.(qc|QC)$"
 magic "^(C|C\+\+) (source|program)"
 comment "//"
 
